@@ -536,24 +536,39 @@
     max-width: 1200px;
     margin: auto;
 }
-.zx-slider {
+
+
+
+
+.zx-wrap {
+    width: 100%;
+    padding: 60px 0;
+}
+
+.zx-viewport {
+    overflow: hidden;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.zx-track {
     display: flex;
-    align-items: center;
+    gap: 20px;
     transition: transform 0.5s ease;
 }
 
+/* kartlar */
 .zx-card {
-    min-width: 33.33%;
-    margin: 0 10px;
+    flex: 0 0 calc(33.333% - 20px);
+    background: #f5f5f5;
     padding: 25px;
     border-radius: 12px;
-    background: #f5f5f5;
     opacity: 0.5;
     transform: scale(0.9);
-    transition: 0.5s;
+    transition: 0.4s;
 }
 
-/* ORTA KART */
+/* ortadaki */
 .zx-card.active {
     background: #FEA116;
     color: #fff;
@@ -561,7 +576,7 @@
     transform: scale(1.05);
 }
 
-/* kullanıcı */
+/* user */
 .zx-user {
     display: flex;
     align-items: center;
