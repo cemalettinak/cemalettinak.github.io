@@ -1,22 +1,44 @@
-const zxSlider = document.getElementById("zxSlider");
-const zxCards = document.querySelectorAll(".zx-card");
+const track = document.getElementById("zxTrack");
+let cards = document.querySelectorAll(".zx-card");
 
-let zxIndex = 0;
+let index = 1;
 
-function updateSlider() {
-    zxCards.forEach(c => c.classList.remove("active"));
+// clone baş ve son (sonsuz scroll için)
+const first = cards[0].cloneNode(true);
+const last = cards[cards.length - 1].cloneNode(true);
 
-    zxCards[zxIndex].classList.add("active");
+track.appendChild(first);
+track.insertBefore(last, track.firstChild);
 
-    const offset = zxIndex * (zxCards[0].offsetWidth + 20);
-    zxSlider.style.transform = `translateX(-${offset - zxCards[0].offsetWidth}px)`;
+cards = document.querySelectorAll(".zx-card");
+
+const cardWidth = cards[0].offsetWidth + 20;
+
+track.style.transform = `translateX(-${cardWidth * index}px)`;
+
+// aktif class
+function setActive() {
+    cards.forEach(c => c.classList.remove("active"));
+    cards[index].classList.add("active");
 }
 
-function nextSlide() {
-    zxIndex++;
-    if (zxIndex >= zxCards.length) zxIndex = 0;
-    updateSlider();
+setActive();
+
+function move() {
+    index++;
+    track.style.transition = "0.5s";
+    track.style.transform = `translateX(-${cardWidth * index}px)`;
+
+    setActive();
+
+    // sonsuz loop fix
+    if (index === cards.length - 1) {
+        setTimeout(() => {
+            track.style.transition = "none";
+            index = 1;
+            track.style.transform = `translateX(-${cardWidth * index}px)`;
+        }, 500);
+    }
 }
 
-updateSlider();
-setInterval(nextSlide, 2500);
+setInterval(move, 2500);
