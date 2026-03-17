@@ -532,16 +532,10 @@
     background: #FEA116;
 }
 
-
-
 .zx-testimonial-wrap {
-    width: 33%;
-    overflow: hidden;
-    padding: 50px 0;
+    max-width: 1200px;
+    margin: auto;
 }
-
-
-
 .zx-slider {
     display: flex;
     align-items: center;
