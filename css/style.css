@@ -477,3 +477,57 @@
     padding-right: 0;
     border-right: none;
 }
+.custom-testimonial-carousel .testimonial-card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 10px;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid #eee;
+    min-height: 200px;
+}
+
+.custom-testimonial-carousel .testimonial-card:hover {
+    background: #FEA116;
+    color: #fff;
+}
+
+.custom-testimonial-carousel .testimonial-card h5 {
+    margin-top: 15px;
+    font-weight: 600;
+}
+
+.custom-testimonial-carousel .testimonial-card small {
+    color: #888;
+}
+
+.custom-testimonial-carousel .testimonial-card:hover small {
+    color: #fff;
+}
+
+/* aktif ortadaki kartı vurgula */
+.custom-testimonial-carousel .owl-item.center .testimonial-card {
+    background: #FEA116;
+    color: #fff;
+    transform: scale(1.05);
+}
+
+/* dotlar */
+.owl-dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.owl-dot span {
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    display: inline-block;
+    border-radius: 50%;
+    margin: 5px;
+}
+
+.owl-dot.active span {
+    background: #FEA116;
+}
