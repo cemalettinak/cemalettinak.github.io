@@ -535,10 +535,12 @@
 
 
 .zx-testimonial-wrap {
-    width: 100%;
+    width: 33%;
     overflow: hidden;
     padding: 50px 0;
 }
+
+
 
 .zx-slider {
     display: flex;
