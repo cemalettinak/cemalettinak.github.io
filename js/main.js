@@ -114,6 +114,20 @@
             }
         }
     });
-    
+    $(document).ready(function(){
+    $("#customTestimonial").owlCarousel({
+        loop: true,
+        margin: 20,
+        center: true,
+        autoplay: true,
+        autoplayTimeout: 3000,
+        smartSpeed: 800,
+        responsive:{
+            0:{ items:1 },
+            768:{ items:2 },
+            992:{ items:3 }
+        }
+    });
+});
 })(jQuery);
 
