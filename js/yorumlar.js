@@ -1,35 +1,22 @@
-    const zzSlides = document.querySelectorAll(".zz-item");
-const zzDotsContainer = document.getElementById("zzDots");
+const zxSlider = document.getElementById("zxSlider");
+const zxCards = document.querySelectorAll(".zx-card");
 
-let zzIndex = 0;
+let zxIndex = 0;
 
-// dot oluştur
-zzSlides.forEach((_, i) => {
-    const dot = document.createElement("span");
-    dot.addEventListener("click", () => goToSlide(i));
-    zzDotsContainer.appendChild(dot);
-});
+function updateSlider() {
+    zxCards.forEach(c => c.classList.remove("active"));
 
-const zzDots = zzDotsContainer.querySelectorAll("span");
+    zxCards[zxIndex].classList.add("active");
 
-function showSlide(index) {
-    zzSlides.forEach(s => s.classList.remove("active"));
-    zzDots.forEach(d => d.classList.remove("active"));
-
-    zzSlides[index].classList.add("active");
-    zzDots[index].classList.add("active");
+    const offset = zxIndex * (zxCards[0].offsetWidth + 20);
+    zxSlider.style.transform = `translateX(-${offset - zxCards[0].offsetWidth}px)`;
 }
 
 function nextSlide() {
-    zzIndex = (zzIndex + 1) % zzSlides.length;
-    showSlide(zzIndex);
+    zxIndex++;
+    if (zxIndex >= zxCards.length) zxIndex = 0;
+    updateSlider();
 }
 
-function goToSlide(i) {
-    zzIndex = i;
-    showSlide(zzIndex);
-}
-
-// başlat
-showSlide(zzIndex);
-setInterval(nextSlide, 3000);
+updateSlider();
+setInterval(nextSlide, 2500);
