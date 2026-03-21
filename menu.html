@@ -123,9 +123,17 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- Menu Start -->
-<div class="row g-4">
-    <div class="col-lg-6">
+       <!-- Menü Başlangıç -->
+<div class="mb-4">
+    <button onclick="filterMenu('all')" class="btn btn-primary me-2">Tümü</button>
+    <button onclick="filterMenu('food')" class="btn btn-success me-2">Yiyecekler</button>
+    <button onclick="filterMenu('drink')" class="btn btn-info">İçecekler</button>
+</div>
+
+<div class="row g-4" id="menu">
+
+    <!-- Yiyecekler -->
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/kokoreç.PNG" alt="Kokoreç" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -138,7 +146,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/adanakebab.jpg" alt="Adana Kebap" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -151,7 +159,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/urfa-kebap-durum.jpg" alt="Urfa Kebap" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -164,9 +172,9 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
-            <img class="flex-shrink-0 img-fluid rounded" src="img/anekofresi.jpg" alt="Fethiye Street Food" style="width: 80px;">
+            <img class="flex-shrink-0 img-fluid rounded" src="img/anekofresi.jpg" alt="Anne Köftesi" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
                 <h5 class="d-flex justify-content-between border-bottom pb-2">
                     <span>Anne Köftesi (Izgara)</span>
@@ -177,9 +185,9 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
-            <img class="flex-shrink-0 img-fluid rounded" src="img/kasarlikofte.jpg" alt="Fethiye Sokak Lezetleri" style="width: 80px;">
+            <img class="flex-shrink-0 img-fluid rounded" src="img/kasarlikofte.jpg" alt="Özel Kaşarlı Köfte" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
                 <h5 class="d-flex justify-content-between border-bottom pb-2">
                     <span>Özel Kaşarlı Köfte</span>
@@ -190,9 +198,9 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
-            <img class="flex-shrink-0 img-fluid rounded" src="img/inegolkofte.jpg" alt="Traditional Food" style="width: 80px;">
+            <img class="flex-shrink-0 img-fluid rounded" src="img/inegolkofte.jpg" alt="Meşhur İnegöl Köfte" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
                 <h5 class="d-flex justify-content-between border-bottom pb-2">
                     <span>Meşhur İnegöl Köfte</span>
@@ -203,9 +211,9 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
-            <img class="flex-shrink-0 img-fluid rounded" src="img/teksisyalniz.PNG" alt="Fethiye Kokoreç" style="width: 80px;">
+            <img class="flex-shrink-0 img-fluid rounded" src="img/teksisyalniz.PNG" alt="Yalnızların lüks kokoreçi" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
                 <h5 class="d-flex justify-content-between border-bottom pb-2">
                     <span>Yalnızların lüks kokoreçi</span>
@@ -215,9 +223,10 @@
             </div>
         </div>
     </div>
-<div class="col-lg-6">
+
+    <div class="col-lg-6 menu-item food">
         <div class="d-flex align-items-center">
-            <img class="flex-shrink-0 img-fluid rounded" src="img/teksis.PNG" alt="Fethiye Sakatat" style="width: 80px;">
+            <img class="flex-shrink-0 img-fluid rounded" src="img/teksis.PNG" alt="Tüm Şiş KokoChef Kokoreç" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
                 <h5 class="d-flex justify-content-between border-bottom pb-2">
                     <span>Tüm Şiş KokoChef Kokoreç</span>
@@ -227,11 +236,9 @@
             </div>
         </div>
     </div>
-    
-</div>
 
-        <div class="row g-4">
-    <div class="col-lg-6">
+    <!-- İçecekler -->
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/su.jpg" alt="Su" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -244,7 +251,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/kola.jpg" alt="Coca Cola" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -257,7 +264,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/fanta-sprite.jpg" alt="Fanta Sprite" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -270,7 +277,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/cappy.jpg" alt="Cappy" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -283,7 +290,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/fusetea.jpg" alt="Fuse Tea" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -296,7 +303,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/ayran.jpg" alt="Ayran" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -309,7 +316,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/soda-churchill.jpg" alt="Churchill" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -322,7 +329,7 @@
         </div>
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 menu-item drink">
         <div class="d-flex align-items-center">
             <img class="flex-shrink-0 img-fluid rounded" src="img/cay.jpg" alt="Çay" style="width: 80px;">
             <div class="w-100 d-flex flex-column text-start ps-4">
@@ -334,7 +341,21 @@
             </div>
         </div>
     </div>
+
 </div>
+
+<script>
+function filterMenu(type) {
+    const items = document.querySelectorAll('.menu-item');
+    items.forEach(item => {
+        if (type === 'all') {
+            item.style.display = 'block';
+        } else {
+            item.style.display = item.classList.contains(type) ? 'block' : 'none';
+        }
+    });
+}
+</script>
         <!-- Menu End -->
         
 
