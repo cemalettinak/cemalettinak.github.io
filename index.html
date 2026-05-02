@@ -33,49 +33,58 @@
 </head>
 
 <body>
+ <div id="welcome-screen" style="...">
+        <video id="welcome-video" autoplay muted playsinline style="...">
+            <source src="kokochef.mp4" type="video/mp4">
+        </video>
+        
+        <!-- Sesi Aç butonu -->
+        <button id="unmute-btn" style="
+            position: absolute;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10000;
+            background: #FEA116;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            font-weight: bold;
+        ">
+            🔇 Sesi Aç
+        </button>
+    </div>
 
-<a href="https://wa.me/905443884848" 
-   class="whatsapp-float" 
-   target="_blank">
-    <i class="fab fa-whatsapp"></i>
-</a>
+    <script>
+        const video = document.getElementById('welcome-video');
+        const splash = document.getElementById('welcome-screen');
+        const btn = document.getElementById('unmute-btn');
+        
+        btn.onclick = function() {
+            video.muted = false;
+            btn.style.display = 'none';
+        };
+        
+        video.onended = function() {
+            splash.style.opacity = '0';
+            setTimeout(() => splash.remove(), 1000);
+        };
+        
+        video.play();
+    </script>
+    <!-- AÇILIŞ ANİMASYONU (SPLASH SCREEN) - BİTİŞ -->
 
-<style>
-.whatsapp-float {
-    position: fixed;
-    width: 60px;
-    height: 60px;
-    bottom: 250px;
-    right: 20px;
-    background-color: #25D366;
-    color: #fff;
-    border-radius: 50%;
-    text-align: center;
-    font-size: 30px;
-    line-height: 60px;
-    z-index: 1000;
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-    transition: 0.3s;
-}
-
-.whatsapp-float:hover {
-    background-color: #1ebe5d;
-    transform: scale(1.1);
-}
-</style>
-
-
-
-    <div class="container-xxl bg-white p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
-            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
-                <span class="sr-only">Loading...</span>
-            </div>
+    <!-- MEVCUT SPINNER KODUNUZ. BUNU KALDIRMANIZI VEYA YORUM SATIRI YAPMANIZI ÖNERİRİM -->
+    <!--
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
         </div>
-        <!-- Spinner End -->
-
-
+    </div>
+    -->
         <!-- Navbar & Hero Start -->
         <div class="container-xxl position-relative p-0">
            <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
